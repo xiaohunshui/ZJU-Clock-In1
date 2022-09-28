@@ -14,16 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-      - name: Setup Python
-        uses: actions/setup-python@v3.1.0
-        with:
-          python-version: 3.9
-      - name: Install packages
-        run: |
-          pip3 install requests
-          pip3 install ddddocr
       - name: Clock In
         env:
           ACCOUNT: ${{ secrets.ACCOUNT }}
